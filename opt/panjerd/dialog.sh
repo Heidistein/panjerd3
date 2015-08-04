@@ -66,7 +66,7 @@ while `true`; do
 
 		collectStations
 		
-		if [ ! -d "$(cat $STATIONFILE)" ]; then
+		if [ ! -d "$STATIONDIR/$(cat $STATIONFILE)" ]; then
 			randomStation
 			setStation
 		fi
