@@ -15,8 +15,8 @@ fi
 
 while `true`; do
 	echo -e "Default \e[32mLight green"
-	nice -n -15 curl -s "${STREAMURL}" | tee -a "${CURLPIPE}" | hexdump -e '"|" 8/1 "%02X " "|\n"'
+	curl -s "${STREAMURL}" | tee -a "${CURLPIPE}" | hexdump -e '"|" 8/1 "%02X " "|\n"'
 	echo -n "FOUT: De PANJERD stream is gebroken! Opnieuw proberen..."
-	sleep 1
+	sleep 0.2
 done
 

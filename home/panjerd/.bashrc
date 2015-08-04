@@ -114,8 +114,6 @@ fi
 
 sudo /usr/bin/setterm -blank 0 -powersave off
 
-sleep 5
-
 screen
 
 
