@@ -11,7 +11,7 @@ STATION_NUMBERS=()
 STATION_NAMES=()
 STATION_STRING=""
 
-function showMenu {
+function collectStations {
 
 		STATION_NUMBERS=()
 		STATION_NAMES=()
@@ -36,20 +36,44 @@ function showMenu {
 				fi
 		done
 		IFS=$SAVEIFS
+}
 
+function showMenu {
 		exec 3>&1
 		BLA="dialog --nocancel --ok-label 'PLAY' --default-item $STATION --menu 'Choose Broadcast:' 15 35 7 ${STATION_STRING}"
 		STATION=$(eval ${BLA}  2>&1 1>&3)
 
 }
 
+function randomStation {
+	
+	TMPFILE=$(mktemp)
+	
+	for i in "${!STATION_NAMES[@]}"; do   
+		echo "$i" >> $TMPFILE
+	done
+	
+	STATION=$(cat "$TMPFILE" | sort -R | head -1)
+	
+	rm -f "$TMPFILE"
+}
 
+function setStation {
+	echo "${STATION_NAMES[${STATION}]}" > "$STATIONFILE"
+}
 
 while `true`; do
 
+		collectStations
+		
+		if [ ! -d "$(cat $STATIONFILE)" ]; then
+			randomStation
+			setStation
+		fi
+		
 		showMenu
 		
-		echo "${STATION_NAME[${STATION}]}" > "$STATIONFILE"
+		setStation		
 		
 		clear
 
