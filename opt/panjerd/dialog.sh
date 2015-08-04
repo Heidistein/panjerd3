@@ -40,8 +40,8 @@ function collectStations {
 
 function showMenu {
 		exec 3>&1
-		BLA="dialog --nocancel --ok-label 'PLAY' --default-item $STATION --menu 'Choose Broadcast:' 15 35 7 ${STATION_STRING}"
-		STATION=$(eval ${BLA}  2>&1 1>&3)
+		BLA="dialog --nocancel --ok-label 'PLAY' --default-item $STATION --menu 'Choose Broadcast:' 15 35 7 ${STATION_STRING} 2>&1 1>&3"
+		STATION=$(eval ${BLA})
 
 }
 
