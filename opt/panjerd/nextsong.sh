@@ -5,6 +5,11 @@ source /opt/panjerd/VARS.sh
 ## Dit dynamisch maken
 CHANNEL="${STATIONDIR}/$(cat ${STATIONFILE})"
 
+if [ ! -e "${STATIONFILE}" ]; then
+	## Station not yet available. Picking random one"
+	CHANNEL=$(ls -1 ${STATIONDIR} | sort -R | head -1)
+fi
+
 if [[ ! -e "${BASEDIR}${CHANNEL}${MUSIC}" ]]; then
 	echo "ERROR Station ${CHANNEL} has no music."
 	exit 1
