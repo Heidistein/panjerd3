@@ -7,7 +7,7 @@ CHANNEL="${STATIONDIR}/$(cat ${STATIONFILE})"
 
 if [ ! -e "${STATIONFILE}" ]; then
 	## Station not yet available. Picking random one"
-	CHANNEL=$(ls -1 ${STATIONDIR} | sort -R | head -1)
+	CHANNEL="${STATIONDIR}/$(ls -1 ${STATIONDIR} | sort -R | head -1)"
 fi
 
 if [[ ! -e "${BASEDIR}${CHANNEL}${MUSIC}" ]]; then

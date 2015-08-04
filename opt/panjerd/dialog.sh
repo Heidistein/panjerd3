@@ -49,7 +49,7 @@ while `true`; do
 
 		showMenu
 		
-		echo "${STATION_NAME}[${STATION}]" > "$STATIONFILE"
+		echo "${STATION_NAME[${STATION}]}" > "$STATIONFILE"
 		
 		clear
 
