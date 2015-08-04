@@ -1,0 +1,57 @@
+startup_message off
+
+screen -t "PANJERD TITLE" 1 /opt/panjerd/figlet.sh
+screen -t "PANJERD ENCODE" 2 /opt/panjerd/ezstream.sh
+screen -t "PANJERD DECODE" 3 /opt/panjerd/decode.sh
+screen -t "PANJERD PLAYER" 4 /opt/panjerd/play.sh
+screen -t "PANJERD CONTROLL" 5 /opt/panjerd/dialog.sh
+screen -t "PANJERD STREAM" 6 /opt/panjerd/curl.sh
+
+select "PANJERD TITLE"
+split
+resize 6
+
+focus down
+
+select "PANJERD ENCODE"
+split
+resize 3
+
+focus down
+
+select "PANJERD DECODE"
+split
+resize 3
+
+focus down
+
+select "PANJERD PLAYER"
+split
+resize 3
+
+focus down
+select "PANJERD CONTROLL"
+split -v
+resize max
+
+focus right
+select "PANJERD STREAM"
+resize -h 26
+
+focus up
+focus up
+focus up
+focus up
+
+resize 7
+
+focus down
+resize 1
+
+focus down
+resize 1
+
+focus down
+resize 1
+
+focus down
