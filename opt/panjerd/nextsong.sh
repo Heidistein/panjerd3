@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /opt/panjerd/VARS.sh
+
 ## Dit dynamisch maken
 CHANNEL="${STATIONDIR}/$(cat ${STATIONFILE})"
 
