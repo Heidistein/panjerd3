@@ -66,7 +66,8 @@ while `true`; do
 
 		collectStations
 		
-		if [ ! -d "$STATIONDIR/$(cat $STATIONFILE)" ]; then
+		# Check if the folder from that is in the stationfile has a music folder.
+		if [ ! -d "$STATIONDIR/$(cat $STATIONFILE)/music" ]; then
 			randomStation
 			setStation
 		fi

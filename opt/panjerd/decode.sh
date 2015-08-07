@@ -14,7 +14,7 @@ fi
 
 
 while `true`; do
-	/usr/bin/mplayer "${CURLPIPE}" -af volnorm=2:0.90 -ao pcm:file=${DECODEPIPE}
+	/usr/bin/mplayer "${CURLPIPE}" -af volnorm=2:0.90 -cache 8192 -ao pcm:file=${DECODEPIPE}
 	echo -n "FOUT: De PANJERD decoder is gebroken! Opnieuw proberen..."
 	sleep 0.2
 done
