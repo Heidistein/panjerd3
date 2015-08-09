@@ -80,6 +80,6 @@ while `true`; do
 
 		killall -USR1 ezstream
 
-		for i in $(seq 0 2 100) ; do sleep 0.08; echo $i | dialog --gauge "Please wait, tuning to station..." 10 40 0; done
+		for i in $(seq 0 2 100) ; do sleep 0.05; echo $i | dialog --gauge "Please wait, tuning to station..." 10 40 0; done
 done
 
