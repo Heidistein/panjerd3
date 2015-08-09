@@ -63,7 +63,7 @@
             <format>FLAC</format>
             <match>.flac</match>
 			<decode>sox --norm - -t .raw "@T@"</decode>
-            <!-- <decode>flac -s -d --force-raw-format --sign=signed --endian=little -o - "@T@"</decode> -->
+            <!-- <decode>flac -s -d - -force-raw-format - -sign=signed - -endian=little -o - "@T@"</decode> -->
             <!-- <encode>Not supported Yet</encode> -->
         </encdec>
         <encdec>
