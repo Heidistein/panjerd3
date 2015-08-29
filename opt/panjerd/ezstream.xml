@@ -62,8 +62,8 @@
             <!-- Support for FLAC decoding: -->
             <format>FLAC</format>
             <match>.flac</match>
-			<!--<decode>sox - -norm "@T@" -t .raw -</decode>-->
-			<decode>/usr/bin/mplayer "@T@" -af volnorm=2:0.25 -ao pcm:file=/dev/stdout -quiet -really-quiet </decode>
+            <!--<decode>sox - -norm "@T@" -t .raw -</decode>-->
+	    <decode>/opt/panjerd/ezhelper.sh "@T@"</decode>
             <!-- <decode>flac -s -d - -force-raw-format - -sign=signed - -endian=little -o - "@T@"</decode> -->
             <!-- <encode>Not supported Yet</encode> -->
         </encdec>
@@ -75,7 +75,7 @@
             <match>.mp3</match>
             <!-- Note: madplay uses host byte order for raw samples. -->
             <!-- <decode>madplay -b 16 -R 44100 -S -o raw:- "@T@"</decode> -->
-			<decode>/usr/bin/mplayer "@T@" -af volnorm=2:0.25 -ao pcm:file=/dev/stdout -quiet -really-quiet </decode>
+            <decode>/opt/panjerd/ezhelper.sh "@T@"</decode>
             <!-- <decode>mpg123 -s "@T@"</decode> --> 
             <encode>lame --preset cbr 128 -r -s 44.1 --bitwidth 16 - -</encode>
         </encdec>
@@ -86,7 +86,7 @@
             <format>VORBIS</format>
             <match>.ogg</match>
             <!-- <decode>oggdec -R -b 16 -e 0 -s 1 -o - "@T@"</decode> -->
-			<decode>/usr/bin/mplayer "@T@" -af volnorm=2:0.25 -ao pcm:file=/dev/stdout -quiet -really-quiet </decode>
+            <decode>/opt/panjerd/ezhelper.sh "@T@"</decode>
             <encode>oggenc -r -B 16 -C 2 -R 44100 --raw-endianness 0 -q 5 -t "@M@" -</encode>
         </encdec>
     </reencode>
