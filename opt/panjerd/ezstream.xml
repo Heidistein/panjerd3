@@ -73,6 +73,24 @@
         </encdec>
 
         <encdec>
+            <format>WAVE</format>
+            <match>.wav</match>
+            <decode>/opt/panjerd/ezhelper.sh "@T@"</decode>
+        </encdec>
+
+        <encdec>
+            <format>WMA</format>
+            <match>.wma</match>
+            <decode>/opt/panjerd/ezhelper.sh "@T@"</decode>
+        </encdec>
+
+        <encdec>
+            <format>M4A</format>
+            <match>.m4a</match>
+            <decode>/opt/panjerd/ezhelper.sh "@T@"</decode>
+        </encdec>
+
+        <encdec>
             <format>VORBIS</format>
             <match>.ogg</match>
             <decode>/opt/panjerd/ezhelper.sh "@T@"</decode>
