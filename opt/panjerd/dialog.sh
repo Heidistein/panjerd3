@@ -62,6 +62,13 @@ function setStation {
 	echo "${STATION_NAMES[${STATION}]}" > "$STATIONFILE"
 }
 
+function tuneStation {
+	for i in $(seq 0 3 100) ; do sleep 0.05; echo $i | dialog --gauge "Please wait, tuning to station..." 10 40 0; done
+}
+
+## Before going into the loop, first tune into a station
+tuneStation
+
 while `true`; do
 
 		collectStations
@@ -74,12 +81,12 @@ while `true`; do
 		
 		showMenu
 		
-		setStation		
+		setStation
 		
 		clear
 
 		killall -USR1 ezstream
 
-		for i in $(seq 0 2 100) ; do sleep 0.05; echo $i | dialog --gauge "Please wait, tuning to station..." 10 40 0; done
+		tuneStation
 done
 
