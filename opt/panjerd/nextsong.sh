@@ -19,7 +19,15 @@ if [[ ! -e "${BASEDIR}${CHANNEL}${ADVER}" ]]; then
         echo "WARNING Station ${CHANNEL} has no commercials." > 2
 fi
 
-FILE=$(find "${CHANNEL}${MUSIC}" -iregex ".*\(ogg\|mp3\|wav\|flac\|wma\|m4a\)" | sort -R | head -1)
+if [ $((RANDOM%${CHANCE_ADV}+1)) -eq 1 ]; then
+	## Commercial
+	FILE=$(find "${CHANNEL}${NEWS}" -iregex ".*\(ogg\|mp3\|wav\|flac\|wma\|m4a\)" | sort -R | head -1)
+elif [ $((RANDOM%${CHANCE_NWS}+1)) -eq 1 ]; then
+	## NEWS
+	FILE=$(find "${CHANNEL}${NEWS}" -iregex ".*\(ogg\|mp3\|wav\|flac\|wma\|m4a\)" | sort -R | head -1)
+else
+	FILE=$(find "${CHANNEL}${MUSIC}" -iregex ".*\(ogg\|mp3\|wav\|flac\|wma\|m4a\)" | sort -R | head -1)
+fi
 
 echo $FILE
 
