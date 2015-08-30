@@ -13,7 +13,8 @@ ADVERTDIR="${DATADIR}/adverts"
 MUSIC="/music"
 ADVER="/commercial"
 NEWS="/news"
-TXTAD="/txt_adverts"
+
+WAITTIME_ADVERT=1
 
 CHANCE_ADV=4
 CHANCE_NWS=10
