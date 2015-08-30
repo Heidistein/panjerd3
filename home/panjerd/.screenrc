@@ -42,7 +42,7 @@ select "PANJERD ADS"
 resize -h 30
 split
 
-focus up
+focus down
 select "PANJERD STREAM"
 
 focus up
