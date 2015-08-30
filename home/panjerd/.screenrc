@@ -36,7 +36,7 @@ resize max
 
 focus right
 select "PANJERD STREAM"
-resize -h 26
+resize -h 30
 
 focus up
 focus up

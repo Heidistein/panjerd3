@@ -8,15 +8,15 @@ if [[ ! -p "${CURLPIPE}" ]]; then
 fi
 
 if [[ ! -p "${CURLPIPE}" ]]; then
-        echo -n "ERROR: Could not create curl fifo!"
+	echo -n "ERROR: Could not create curl fifo!"
 	exit 1
 fi
 
 
 while `true`; do
-	echo -e "Default \e[32mLight green"
-	curl -s "${STREAMURL}" | tee -a "${CURLPIPE}" | hexdump -e '"|" 8/1 "%02X " "|\n"'
-	echo -n "FOUT: De PANJERD stream is gebroken! Opnieuw proberen..."
+	echo -e "${GREEN}Starting stream"
+	curl -s "${STREAMURL}" | tee -a "${CURLPIPE}" | hexdump -e '" | " 8/1 "%02X " " |\n"'
+	echo -ne "${RED}FOUT: De PANJERD stream is gebroken! Opnieuw proberen..."
 	sleep 0.2
 done
 
