@@ -5,8 +5,9 @@ screen -t "PANJERD ENCODE" 2 /opt/panjerd/ezstream.sh
 screen -t "PANJERD DECODE" 3 /opt/panjerd/decode.sh
 screen -t "PANJERD PLAYER" 4 /opt/panjerd/play.sh
 screen -t "PANJERD CONTROLL" 5 /opt/panjerd/dialog.sh
-screen -t "PANJERD STREAM" 6 /opt/panjerd/curl.sh
-screen -t "PANJERD ADS" 7 /opt/panjerd/adverts.sh
+screen -t "PANJERD ADS" 6 /opt/panjerd/adverts.sh
+screen -t "PANJERD STREAM" 7 /opt/panjerd/curl.sh
+
 
 
 select "PANJERD TITLE"
@@ -37,10 +38,10 @@ split -v
 resize max
 
 focus right
-select "PANJERD STREAM"
+select "PANJERD ADS"
 resize -h 30
 
-select "PANJERD ADS"
+select "PANJERD STREAM"
 split
 
 focus up
