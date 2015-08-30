@@ -7,14 +7,14 @@ source /opt/panjerd/VARS.sh
 
 while `true`; do
 	clear
-	echo -e "       ${BLUE}${ON_RED}Advertisement${RESET}\n"
+	echo -e "        ${BLUE}${ON_RED}Advertisement${RESET}\n"
 	
 	FILE=$(find "${ADVERTDIR}" -iregex ".*\(txt\)" | sort -R | head -1)
 	
 	if [ -e "${FILE}" ]; then
-		echo "Running free!"
-	else
 		cat "$FILE"
+	else
+		echo "Running free!"
 	fi
 	
 	sleep $WAITTIME_ADVERT
