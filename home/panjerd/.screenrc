@@ -40,9 +40,10 @@ resize max
 focus right
 select "PANJERD ADS"
 resize -h 30
-
-select "PANJERD STREAM"
 split
+
+focus up
+select "PANJERD STREAM"
 
 focus up
 focus up
