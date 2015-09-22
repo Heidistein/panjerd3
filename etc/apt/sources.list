@@ -1,0 +1,4 @@
+deb http://ftp.debian.org/debian jessie main
+
+deb [trusted=yes] https://repositories.collabora.co.uk/debian/ jessie rpi2 
+deb http://http.debian.net/debian/ jessie main contrib non-free
