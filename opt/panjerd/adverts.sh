@@ -18,7 +18,8 @@ while `true`; do
 	if [ $((RANDOM%20+1)) -eq 1 ]; then
 		echo ${CREDITS} | base64 -d
 	elif [ -e "${FILE}" ]; then
-		cat "$FILE" | head -9 | cut -c 1-29
+		# The AWK cuts of the last newline
+		cat "$FILE" | head -8 | cut -c 1-29 | awk '{q=p;p=$0}NR>1{print q}END{ORS = ""; print p}'
 	else
 		echo "Running free!"
 	fi

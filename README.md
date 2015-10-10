@@ -23,7 +23,7 @@ The USB drive needs to have a LABEL that is exactly PANTENNA
 
 #### adverts
 Place text files here, which are shown in the 'advertisemens' sections on the 
-screen. The files are cut of after nine lines and 29 collumns. (!)
+screen. The files are cut of after 8 lines and 29 collumns. (!)
 Just place a file here ending with .txt in the filename.
 **Be sure the line endings are UNIX**
 
