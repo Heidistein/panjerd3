@@ -1,1 +1,0 @@
-ENV{ID_FS_LABEL_ENC}=="?*", ENV{ID_FS_USAGE}=="filesystem|other", SUBSYSTEMS=="usb", RUN += "/usr/local/sbin/udev-mount-by-label '%E{ID_FS_LABEL_ENC}'"
