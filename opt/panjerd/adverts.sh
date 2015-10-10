@@ -18,7 +18,7 @@ while `true`; do
 	if [ $((RANDOM%20+1)) -eq 1 ]; then
 		echo ${CREDITS} | base64 -d
 	elif [ -e "${FILE}" ]; then
-		cat "$FILE" | head -9 | cut -c 29
+		cat "$FILE" | head -9 | cut -c 1-29
 	else
 		echo "Running free!"
 	fi
