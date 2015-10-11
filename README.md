@@ -14,10 +14,11 @@ Just run the isntall.sh script.
 
 ## The layout of the datasource.
 ### Basics
-There are two imporant things on the datasource, called the PANTENNA (Panjerd 
+There are three imporant things on the datasource, called the PANTENNA (Panjerd 
 Antenna, because this seems logic).
 - adverts   -- This contains the text adverts on the screen
 - stations  -- The music commercials and news goes here.
+- intro.mp3 -- The first song that is played after startup.
 
 The USB drive needs to have a LABEL that is exactly PANTENNA
 
@@ -28,7 +29,7 @@ Just place a file here ending with .txt in the filename.
 **Be sure the line endings are UNIX**
 
 #### stations
-In the /stations folder uis the place the stations go. The name on the screen is 
+In the /stations folder is the place the stations go. The name on the screen is 
 the name of the station with the first three characters chopped off. Those are 
 used for sorting. Example:
 - 01_Technomancer radio
