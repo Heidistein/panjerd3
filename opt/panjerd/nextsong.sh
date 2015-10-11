@@ -6,8 +6,10 @@ source /opt/panjerd/VARS.sh
 CHANNEL="${STATIONDIR}/$(cat ${STATIONFILE})"
 
 if [ ! -e "${STATIONFILE}" ]; then
-	## Station not yet available. Picking random one"
-	CHANNEL="${STATIONDIR}/$(ls -1 ${STATIONDIR} | sort -R | head -1)"
+	## Station not yet available. Playing the intro.mp3"
+	#CHANNEL="${STATIONDIR}/$(ls -1 ${STATIONDIR} | sort -R | head -1)"
+	echo "${DATADIR}/intro.mp3"
+	exit
 fi
 
 if [[ ! -e "${BASEDIR}${CHANNEL}${MUSIC}" ]]; then
